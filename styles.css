@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders+Display:wght@100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    font-family: "League Spartan", serif;
+    position: relative;
+}
+.top-bg{
+    background-image: url('images/bg-pattern-top-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bottom-bg{
+    background-image: url('images/bg-pattern-bottom-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+main{
+    display: grid;
+    grid-template-areas: 'headline review'
+    'comment comment';
+    grid-template-columns: 40% 60%;
+    gap: 40px 100px;
+}
+.header{
+    grid-area: headline;
+}
+.reviews{
+    grid-area: review;
+}
+.comments{
+    grid-area: comment;
+}
+@media (min-width:768px){
+    body{
+        padding: 20vh 20vw;
+    }
+}
+@media (max-width: 768px){
+    body{
+        padding: 10vh 10vw;
+    }
+    .top-bg{
+        background-image: url('images/bg-pattern-top-mobile.svg') !important;
+    }
+    .bottom-bg{
+        background-image: url('images/bg-pattern-bottom-mobile.svg') !important;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .reviews div{
+        width: 100% !important;
+        margin-left: 0 !important;
+        text-align: center;
+    }
+    .reviews div h2{
+        display: block !important;
+        margin-top: 10px !important;
+    }
+    .comments{
+        display: flex;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    .comments .comment{
+        width: 100% !important;
+        margin-top: 20px !important;
+
+    }
+}
+h1{
+    width: 60%;
+    font-weight: 700;
+    color: hsl(300, 43%, 22%);
+    font-size: 40px;
+    margin: 20px;
+}
+.header p{
+    margin: 20px;
+    color: hsl(303, 10%, 53%);
+    font-size: 15px;
+    font-weight: 500;
+    width: 80%;
+}
+.reviews div{
+    background-color: hsl(300, 24%, 96%);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 450px;
+    border-radius: 10px;
+}
+.reviews div h2{
+    font-size: 20px;
+    font-weight: 700;
+    color: hsl(300, 43%, 22%);
+    margin-left: 20px;
+    display: inline;  
+}
+.reviews div:nth-child(1){
+    margin-left: 0;
+}
+.reviews div:nth-child(2){
+    margin-left: 30px;
+}
+.reviews div:nth-child(3){
+    margin-left: 60px;
+}
+.comments{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+.comments .comment{
+    background-color: hsl(300, 43%, 22%);
+    padding: 30px;
+    width: 370px;
+    border-radius: 10px;
+    align-self: flex-start;
+
+}
+.comment-info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.comment-info {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.comment-info div{
+    margin-top: 10px;
+}
+.comment-info h3{
+   color: hsl(0, 0%, 100%);
+   font-weight: 500;
+   margin: 5px;
+}
+.comment-info p{
+    color: hsl(333, 80%, 67%, 0.5) !important;
+    font-weight: 500 !important;
+    margin: 5px !important;
+}
+.comment p{
+    color: hsl(300, 24%, 96%);
+    font-weight: 400;
+    font-size: 15px;
+    margin: 20px 5px;
+}
+.comments .comment:nth-child(1){
+    margin-top: 0;
+}
+.comments .comment:nth-child(2){
+    margin-top: 20px;
+}
+.comments .comment:nth-child(3){
+    margin-top: 40px;
+}
